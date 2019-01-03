@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 2019_01_01_223945) do
 
   create_table "users", force: :cascade do |t|
     t.text "username"
+    t.text "password_digest"
+    t.text "avatar"
     t.text "name"
     t.integer "age"
     t.string "sex"
