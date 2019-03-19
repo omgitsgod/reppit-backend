@@ -3,7 +3,7 @@ class Api::V1::WorkoutsController < ApplicationController
 
   def index
     @workouts = Workout.all
-    render json: @workouts
+    render json: UserSerializer.new(@workouts)
   end
 
   def create
@@ -13,7 +13,7 @@ class Api::V1::WorkoutsController < ApplicationController
   def show
 
     @workout = Workout.where(date: params['id']).all
-    render json: @workout
+    render json: UserSerializer.new(@workout)
   end
 
   private
