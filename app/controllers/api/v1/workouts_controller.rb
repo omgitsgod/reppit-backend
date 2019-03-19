@@ -1,4 +1,5 @@
 class Api::V1::WorkoutsController < ApplicationController
+  skip_before_action :authenticate
   before_action :find_workout, only: [:update]
 
   def index
